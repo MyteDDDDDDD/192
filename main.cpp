@@ -24,27 +24,27 @@ int subLine() {
 int main() {
 	int c;
 	cin >> c;
-	vector <bool> v;
+	bool *r = new bool[c];
 	for (int i = 0; i < c; i++) {
 		flag = true;
 		subLine();
 		if (flag) {
-			v.push_back(true);
+			r[i] = 1;
 		}
 			
 		else {
-			v.push_back(false);
+			r[i] = 0;
 		}
 		
 			
 	}
-	while (!v.empty()) {
-		if (v.front())
+	for (int i = 0; i < c; i++) {
+		if (r[i])
 			cout << "YES" << endl;
 		else
 			cout << "NO" << endl;
-		v.pop_back();
-		if (!v.empty())
+
+		if (i < c - 1)
 			cout << endl;
 	}
 	return 0;
